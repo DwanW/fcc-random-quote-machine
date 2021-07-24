@@ -7,9 +7,9 @@ import {
   Typography,
 } from "@material-ui/core";
 import React from "react";
-import twitter from "../twitter.svg";
-import microphone from "../microphone.svg";
-import xcircle from "../xcircle.svg";
+import twitter from "../assets/twitter.svg";
+import microphone from "../assets/microphone.svg";
+import xcircle from "../assets/xcircle.svg";
 
 export default function QuoteItem({ quote, removeQuote }) {
   const readQuote = (text) => {

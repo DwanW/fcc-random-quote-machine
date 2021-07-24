@@ -8,10 +8,14 @@
 }
 
 .start {
+  position: absolute;
   display: flex;
   justify-content: center;
+  height: 24px;
   max-width: 600px;
   margin: auto;
+  top: 0;
+  bottom: 0;
 }
 
 .start-icon {

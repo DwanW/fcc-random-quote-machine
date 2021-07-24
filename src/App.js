@@ -1,9 +1,9 @@
-import { IconButton, Tooltip } from "@material-ui/core";
+import { IconButton, Tooltip, Fade } from "@material-ui/core";
 import { useState } from "react";
 import QuoteItem from "./components/QuoteItem";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./App.css";
-import add from "./add.svg";
+import add from "./assets/add.svg";
 
 function App() {
   const [quotes, setQuotes] = useState([]);
@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="layout">
-      {quotes.length === 0 && (
+      <Fade in={quotes.length === 0}>
         <div className="start">
           <div>This is a quotes generator. Click the icon to get started.</div>
           <span className="start-icon">
@@ -40,7 +40,8 @@ function App() {
             </svg>
           </span>
         </div>
-      )}
+      </Fade>
+
       <div className="container">
         <TransitionGroup>
           {quotes.map((quote) => (
