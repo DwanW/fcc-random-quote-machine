@@ -11,8 +11,9 @@
   position: absolute;
   display: flex;
   justify-content: center;
-  height: 24px;
-  max-width: 600px;
+  align-items: center;
+  height: fit-content;
+  max-width: 70%;
   margin: auto;
   top: 0;
   bottom: 0;
@@ -23,28 +24,32 @@
   align-items: center;
   height: 100%;
   animation: leftRight 1.5s ease-in-out infinite both;
-  margin-left: 1rem;
+  margin-left: 0;
 }
 
 .container {
   width: 100%;
   margin: 0 auto;
+  display: flex;
+  min-height: 100vh;
+  position: relative;
 }
 
 .item {
   margin: 1rem auto;
 }
 
+.quote-group {
+  flex: 1;
+}
+
 .button-group {
-  position: fixed;
-  margin: auto 0;
+  position: sticky;
   width: 50px;
   height: 50px;
   display: flex;
   justify-content: center;
-  top: 0;
-  bottom: 0;
-  right: 20%;
+  top: 46vh;
 }
 
 #text {
@@ -72,19 +77,32 @@
   .container {
     width: 600px;
   }
+  .start {
+    max-width: 600px;
+  }
+  .start-icon {
+    margin-left: 1rem;
+  }
+  .button-group {
+    top: 47.5vh;
+  }
 }
 
 .item-enter {
   opacity: 0;
+  max-height: 0px;
 }
 .item-enter-active {
   opacity: 1;
-  transition: opacity 500ms ease-in;
+  max-height: 1000px;
+  transition: all 500ms ease-in;
 }
 .item-exit {
   opacity: 1;
+  max-height: 1000px;
 }
 .item-exit-active {
   opacity: 0;
-  transition: opacity 500ms ease-in;
+  max-height: 0px;
+  transition: all 500ms ease-in;
 }

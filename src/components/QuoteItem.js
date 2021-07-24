@@ -18,7 +18,7 @@ export default function QuoteItem({ quote, removeQuote }) {
     }
     let synth = window.speechSynthesis;
     if (synth.speaking) {
-      return;
+      synth.cancel()
     }
     let newUtter = new SpeechSynthesisUtterance(text);
     synth.speak(newUtter);
@@ -29,7 +29,7 @@ export default function QuoteItem({ quote, removeQuote }) {
         <Typography id="text">{quote.content}</Typography>
         <Typography id="author"> - {quote.author} </Typography>
         <CardActions>
-          <Tooltip title="tweet" aria-label="tweet" placement="right" arrow>
+          <Tooltip title="tweet" aria-label="tweet" placement="bottom" arrow>
             <IconButton
               target="_blank"
               href={encodeURI(
@@ -39,7 +39,7 @@ export default function QuoteItem({ quote, removeQuote }) {
               <img src={twitter} alt="twitter icon" />
             </IconButton>
           </Tooltip>
-          <Tooltip title="read" aria-label="read quote" placement="right" arrow>
+          <Tooltip title="read" aria-label="read quote" placement="bottom" arrow>
             <IconButton onClick={() => readQuote(quote.content)}>
               <img src={microphone} alt="speak icon" />
             </IconButton>
@@ -47,7 +47,7 @@ export default function QuoteItem({ quote, removeQuote }) {
           <Tooltip
             title="remove"
             aria-label="remove quote"
-            placement="right"
+            placement="bottom"
             arrow
           >
             <IconButton onClick={() => removeQuote(quote._id)}>

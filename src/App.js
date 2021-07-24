@@ -43,7 +43,7 @@ function App() {
       </Fade>
 
       <div className="container">
-        <TransitionGroup>
+        <TransitionGroup className="quote-group">
           {quotes.map((quote) => (
             <CSSTransition key={quote._id} timeout={500} classNames="item">
               <div className="item">
